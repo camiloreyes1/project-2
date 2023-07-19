@@ -1,0 +1,39 @@
+<div class="container-fluid">
+
+<br>
+<br>
+<h1>
+    Welcome to MRKT,<br>
+</h1>
+<br>
+<h2>Instantly connect with local buyers and sellers on MRKT! <br>
+Buy and sell everything from cars and trucks, electronics, <br>
+furniture, and more.</p>
+
+<br>
+
+
+<form action="/auth/login" method="POST">
+<div class="d-grid gap-2 col-4 ">
+
+
+    <button type="submit" class="btn btn-primary btn-sl">Login</button>
+    {{#if errorMessage}}
+      <p class="error">{{errorMessage}}</p>
+    {{/if}}
+
+</div>
+</form>
+
+<form action="/auth/signup" method="POST">
+ <div class="d-grid gap-2 col-4 mt-3">
+
+    <button type="submit" class="btn btn-primary btn-sl">Sign Up</button>
+    {{#if errorMessage}}
+      <p class="error">{{errorMessage}}</p>
+    {{/if}}
+
+</div>
+</div>
+
+

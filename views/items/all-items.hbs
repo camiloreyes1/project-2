@@ -1,0 +1,24 @@
+<div class="container-fluid">
+    
+<br>
+
+<h1>Posts</h1>
+
+<br>
+<div class="d-flex flex-row mb-3">
+
+{{#each items}}
+
+<div class="card mb-3 me-3" style="width: 18rem;">
+  <img src={{imageUrl}} class="card-img-top" alt="...">
+  <div class="card-body">
+    <h5 class="card-title">{{owner.fullName}} wants to sell:  {{name}}</h5>
+
+    <p class="card-text">{{description}}</p>
+    <a href="/items/item-details/{{_id}}" class="btn btn-primary">More Info</a>
+  </div>
+</div>
+
+{{/each}}
+
+</div>

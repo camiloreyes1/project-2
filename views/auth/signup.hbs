@@ -1,0 +1,30 @@
+<div class="container-fluid">
+  
+  <br>
+  <h1>Signup</h1>
+  <br>
+
+  <form action="/auth/signup" method="POST">
+
+    <label for="fullName"> <h5>Full Name</h5> </label>
+        <input id="fullName" type="text" name="fullName"/>
+          
+    <label for="email"> <h5>Email</h5> </label>
+      <input id="email" type="text" name="email"/>
+   
+
+    <label for="password"><h5>Password</h5></label>
+      <input id="password" type="password" name="password"/>
+      
+    <br>
+    <br>
+
+ <button type="submit" class="btn btn-primary btn-sl">Sign Up</button>
+ 
+ <br><br><br>
+ 
+    {{#if errorMessage}}
+      <p class="error">{{errorMessage}}</p>
+    {{/if}}
+  </form>
+</div>

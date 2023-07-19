@@ -1,0 +1,23 @@
+<br>
+
+<h1>{{name}} Details</h1>
+
+<br>
+
+<div class="card col-sm-4 mb-3 mb-sm-0">
+  <img src="{{imageUrl}}" class="card-img-top" alt="item">
+  <div class="card-body">
+    <h5 class="card-title">{{name}}</h5>
+    <p class="card-text">{{description}}</p>
+    <p class="card-text"><small class="text-body-secondary">Added by: {{owner.fullName}}</small></p>
+  </div>
+</div>
+
+<br>
+
+<a href="/items/message/{{_id}}"><button type="button" class="btn btn-primary btn-sm">Message Owner</button></a>
+
+<a href="/items/edit/{{_id}}"><button type="button" class="btn btn-primary btn-sm">Edit Post</button></a>
+
+<a href="/items/delete/{{_id}}"><button type="button"class="btn btn-danger btn-sm">Delete Post</button></a>
+  
