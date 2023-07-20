@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<body>
+<div class='container'>
+ <br>
+    <div class='jumbotron'>
+        <h1 class="display-4">Send Message </h1>
+ <br>
+        <a href="/items/item-details/{{_id}}"><h5>Re: {{name}}</h5></a>
+ <br>
+
+        <form action="/messages/primary-message/{{_id}}/{{owner}}" method="post">
+        
+                <textarea id = 'message' class='form-control' placeholder='Your Message Here' name="content">
+                </textarea>
+            <br>
+                <button id='send' class='btn btn-success'>Send Message</button>
+        
+        
+        </form>
+    </div>
+ <div id='messages'></div>
+</div>
+</body>
+</html>

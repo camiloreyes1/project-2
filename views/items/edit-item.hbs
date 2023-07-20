@@ -1,4 +1,8 @@
+<div class="container-fluid">
+<br>
+
 <h2>Edit Post</h2>
+
 
 <form action="/items/edit/{{_id}}" method="post">
 
@@ -14,23 +18,10 @@
 
     <div class="mb-3">
         <label for="description" class="form-label">Description</label>
-        <textarea name="description" class="form-control" id="description" value="{{description}}"  rows="3"></textarea>
+        <input   type="text" name="description" class="form-control" value="{{description}}" id="description"></input>
 </div>
 
     <br>
     <button type="submit" class="btn btn-success btn-sl">Edit Post</button>
 
 </form>
-
-
- {{!-- <label for="name">Name</label>
-    <input id="name" type="text" name="name" value="{{name}}">
-
-    <label for="imageUrl">Image</label>
-    <input id="imageUrl" type="text" name="imageUrl" value="{{imageUrl}}">
-
-    <label for="description">Description</label>
-    <input id="description" type="text" name="description" value="{{description}}">
-
-
-    <button type="submit">Edit Post</button> --}}

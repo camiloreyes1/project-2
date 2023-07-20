@@ -8,7 +8,7 @@ const isOwner = (req, res, next) => {
         if(foundItems.owner._id.toString() === req.session.user._id) {
             next()
         } else {
-            res.redirect('/all-items')
+            res.redirect('/items/all-items')
         }
     })
     .catch((err) => {

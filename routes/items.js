@@ -6,6 +6,8 @@ const Item = require('../models/Item');
 const isLoggedIn = require('../middleware/isLoggedIn');
 const isOwner = require('../middleware/isOwner');
 const User = require('../models/User');
+const Message = require('../models/Message')
+const Conversation = require ('../models/Conversation')
 
 //CREATE ITEMS 
 
@@ -112,7 +114,7 @@ router.post('/edit/:itemId', isLoggedIn, isOwner, (req, res, next) => {
         {new: true}
     )
     .then((updatedItem) => {
-        res.redirect(`/items/item-details/${updatedItem._id}`)
+        res.redirect('/items/item-details/${updatedItem._id}')
     })
 
     .catch((err) => {
@@ -134,9 +136,42 @@ router.get('/profile', isLoggedIn, (req,res,next) => {
 
         .then((foundItems) => {
             console.log("Owned Items:", foundItems)
-            res.render('items/profile.hbs', { user: req.session.user, items: foundItems})
+            return foundItems
         })
+        .then((foundItems) => {
 
+            Conversation.find({
+                seller: req.session.user._id
+            })
+            .populate("messages")
+            .populate("buyer")
+            .populate('item')
+            .sort({updatedAt: -1})
+            .then((foundConvos) => {
+
+
+                Conversation.find({
+                    buyer: req.session.user._id
+                })
+                .populate("messages")
+                .populate("buyer")
+                .populate('item')
+                .sort({updatedAt: -1})
+                .then((buyerConvos) => {
+                    console.log("buyerConvos", buyerConvos)
+                    console.log("Convos", foundConvos)
+                    res.render('items/profile.hbs', { user: req.session.user, items: foundItems, conversations: foundConvos, buyerConvos})
+                })
+                .catch((err) => {
+                    console.log(err)
+                    next(err)
+                })
+            })
+            .catch((err) => {
+                console.log(err)
+                next(err)
+            })
+        })
         .catch((err) => {
             console.log(err)
             next(err)
@@ -144,13 +179,9 @@ router.get('/profile', isLoggedIn, (req,res,next) => {
 })
 
 router.get('/message', isLoggedIn, (req,res,next) => {
-    
-    User.find(
-        {
-            owner: req.session.user._id
-        })
-  
-  })
+        console.log("Message Owner")
+        res.render('items/message.hbs')
+})
 
 
 
