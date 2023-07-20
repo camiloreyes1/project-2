@@ -1,11 +1,15 @@
+<div class="container-fluid">
+
 {{#each messages}}
 <br>
-<h3>{{author.fullName}}</h3>
-<p>{{content}}</p>
+<h5>{{author.fullName}}</h5>
+       
+    <div type="text" class="form-control" id="send-message" name="content"><p>{{content}}</p></div>
+{{/each}}   
 
-{{/each}}
 
 
+    <br>
 
   <form action="/messages/conversation/{{_id}}" method="POST">
         <div class="mb-3">
@@ -17,7 +21,3 @@
 
   </form>
 
-{{!-- YOU'LL NEED AN INPUT HERE FOR MESSAGES
-and a BUTTON THAT WILL MAKE A REQUEST TO findByIDAndUpdate the CONVERSATION,
-adding a new message to the conversation and then redirect back to this conversation
- --}}

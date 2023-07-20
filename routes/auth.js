@@ -82,7 +82,7 @@ router.post("/signup", (req, res, next) => {
   router.get('/logout', isLoggedIn, (req, res, next) => {
     req.session.destroy(err => {
         if (err) next(err);
-        res.redirect('/auth/login');
+        res.redirect('/');
     });
     console.log("Session", req.session)
 });

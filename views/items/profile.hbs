@@ -1,4 +1,4 @@
-<div class="container-fluid">
+<div class="container-fluid ">
     
 <br>
 
@@ -10,6 +10,7 @@
 
 {{#each items}}
 
+<div class="card-columns" >
 <div class="card mb-3 me-3" style="width: 18rem;">
   <img src={{imageUrl}} class="card-img-top" alt="...">
   <div class="card-body">
@@ -19,7 +20,7 @@
     <a href="/items/item-details/{{_id}}" class="btn btn-primary">More Info</a>
   </div>
 </div>
-
+</div>
 
 
 {{/each}}

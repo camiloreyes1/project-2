@@ -114,7 +114,7 @@ router.post('/edit/:itemId', isLoggedIn, isOwner, (req, res, next) => {
         {new: true}
     )
     .then((updatedItem) => {
-        res.redirect('/items/item-details/${updatedItem._id}')
+        res.redirect(`/items/item-details/${updatedItem._id}`)
     })
 
     .catch((err) => {
