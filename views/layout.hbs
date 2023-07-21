@@ -1,5 +1,9 @@
 <!DOCTYPE html>
 <html>
+   <meta charset="utf-8" />
+    <meta name="viewport" 
+          content="width=device-width, 
+                   initial-scale=1" />
   <head>
     <title>{{title}}</title>
     <link rel='stylesheet' href='/stylesheets/style.css' />
@@ -25,8 +29,10 @@
        <li class="nav-item">
           <a class="nav-link active" aria-current="page" href="/items/profile">My Profile</a>
         </li>
-        
-        <li class="nav-item dropdown">
+
+
+
+      <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
             Marketplace
           </a>
@@ -37,19 +43,34 @@
         </li>
 
 
+        {{!-- <form class="d-flex me-2 my-2"  action="/auth/login" method="get" >
+          <button class="btn btn-outline-success" type="submit">Login</button>
+        </form>
+
+        <form class="d-flex me-2 my-2" action="/auth/signup" method="get" >
+          <button class="btn btn-outline-primary" type="submit">Sign Up</button>
+        </form>
+
+        <form class="d-flex me-2 my-2" action="/auth/logout" method="get" >
+          <button class="btn btn-outline-danger" type="submit">Logout</button>
+        </form>
+
+        
+       --}}
+
 
       </ul>
     </div>
 
-    <form class="d-flex me-2" action="/auth/login" method="get" >
+    <form class="d-flex me-2" action="/auth/login" method="get" id="#navbarNavDropdown" >
       <button class="btn btn-outline-success" type="submit">Login</button>
     </form>
 
-     <form class="d-flex me-2" action="/auth/signup" method="get" >
+     <form class="d-flex me-2" action="/auth/signup" method="get" id="#navbarNavDropdown">
       <button class="btn btn-outline-primary" type="submit">Sign Up</button>
     </form>
 
-        <form class="d-flex me-2" action="/auth/logout" method="get" >
+        <form class="d-flex me-2" action="/auth/logout" method="get" id="#navbarNavDropdown" >
       <button class="btn btn-outline-danger" type="submit">Logout</button>
     </form>
 
